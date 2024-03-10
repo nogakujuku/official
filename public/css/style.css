@@ -599,7 +599,7 @@ header {
   padding-top: 72px;
   padding-bottom: 54px;
   color: #327f09;
-  font-family: Inter;
+  font-family: "Inter";
   font-size: 32px;
   font-weight: 220;
   letter-spacing: 8px;
@@ -1228,6 +1228,20 @@ ul li {
     height: 0.9px; /*--縦線の太さ(幅)--*/
     width: 105%;
     background-color: white;
+  }
+  .copyright {
+    height: 8.8rem;
+  }
+
+  .copyright p {
+    padding-top: 2.5rem;
+    padding-bottom: 0;
+    font-size: 1.4rem;
+  }
+
+  .copyright small {
+    font-size: 0.7rem;
+    letter-spacing: 4.2px;
   }
 }
 /* <!-- ●活動内容ここまで --> */
