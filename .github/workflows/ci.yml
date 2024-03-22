@@ -1,0 +1,32 @@
+name: Deploy to GitHub Pages
+# REF: https://docs.astro.build/ja/guides/deploy/github/
+# REF: https://blog.kimulaco.dev/article/microcms-webhook-to-github-actions/
+on:
+  push:
+    branches: [main]
+
+  repository_dispatch:
+    types: [update_post]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout this repository using git
+        uses: actions/checkout@v4
+
+      - name: Install, build, and upload
+        uses: withastro/action@v1
+        with:
+          node-version: 20
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: ${{ github.ref_name }}
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
