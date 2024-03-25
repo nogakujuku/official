@@ -7,4 +7,6 @@ export default defineConfig({
     host: true,
     open: true,
   },
+  site: "https://nogakujuku.github.io",
+  base: "/dist",
 });
