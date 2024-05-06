@@ -1,57 +1,64 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 ---
+
 <Layout>
   <!-- ヘッダーここから -->
   <Header />
   <!-- ヘッダーここまで -->
   <main>
     <!-- ファーストビューここから -->
-    <div class = "first_view">
-      <img class="img_1" src="img/20230429_114100 1.webp">
-      <p class = "keyword1" id = "vw">農を楽しみ、</p>
-      <p class = "keyword2" id = "vw">農を考える</p>
-      <img class="img_2" src="img/PXL_20221004_032923422 1.webp">
-      <img class="img_3" src="img/108 3 1.webp">
-      <img class="img_4" src="img/PXL_20221127_035036503 1.webp">
-    <!-- ファーストビューここまで -->
-    <!-- "透明"ここから -->
-    <div class="back-image"></div>
-        <div class = "small_eclipse1">
-            <p class = "statement1" id = "vw">「早稲<span>"田"</span>なのに、</p>
-            <p class = "statement1" id = "vw">なぜ<span>"田"</span>んぼがないのか？」</p>
+    <div class="first_view">
+      <img class="img_1" src="/official/img/20230429_114100 1.webp" />
+      <p class="keyword1" id="vw">農を楽しみ、</p>
+      <p class="keyword2" id="vw">農を考える</p>
+      <img class="img_2" src="/official/img/PXL_20221004_032923422 1.webp" />
+      <img class="img_3" src="/official/img/108 3 1.webp" />
+      <img class="img_4" src="/official/img/PXL_20221127_035036503 1.webp" />
+      <!-- ファーストビューここまで -->
+      <!-- "透明"ここから -->
+      <div class="back-image"></div>
+      <div class="small_eclipse1">
+        <p class="statement1" id="vw">「早稲<span>"田"</span>なのに、</p>
+        <p class="statement1" id="vw">
+          なぜ<span>"田"</span>んぼがないのか？」
+        </p>
+      </div>
+      <div class="small_eclipse2">
+        <p class="statement2" id="vw">この素朴な疑問から</p>
+        <p class="statement2" id="vw">私たち農楽塾は発足しました。</p>
+        <p class="statement2" id="vw">そうして誕生した大隈庭園にある早稲田の</p>
+        <p class="statement2" id="vw">「わせでん」</p>
+        <p class="statement2" id="vw">を中心に幅広く活動してきました。</p>
+        <p class="statement2" id="vw">発足から20年たった農楽塾は</p>
+        <p class="statement2" id="vw">わせでんでの稲作に加え、</p>
+        <p class="statement2" id="vw">様々な活動を行ってきました。</p>
+      </div>
+      <div class="big_eclipse">
+        <p class="statement2" id="vw">早稲田キャンパス南門で行っている</p>
+        <p class="statement2" id="vw">バケツ稲の栽培は一般認知度も高く、</p>
+        <p class="statement2" id="vw">
+          南門のいち風景として馴染んできています。
+        </p>
+        <p class="statement2" id="vw">内藤とうがらしプロジェクトでは、</p>
+        <p class="statement2" id="vw">東京都や複数の学校とチームを作り、</p>
+        <p class="statement2" id="vw">絶滅しかけていた江戸野菜の復興に</p>
+        <p class="statement2" id="vw">力を入れてきました。</p>
+        <p class="statement2" id="vw">昨年度からは留学生の受け入れを開始し、</p>
+        <p class="statement2" id="vw">年齢や言語、背景や職業も違う多様な人と</p>
+        <p class="statement2" id="vw">農業を通じて交流することができます。</p>
+      </div>
+      <div class="medium_eclipse">
+        <div class="key_phrase">
+          <p class="statement3" id="vw">「農を楽しみ、</p>
+          <p class="statement4" id="vw">農を考える」</p>
         </div>
-        <div class = "small_eclipse2">
-            <p class="statement2" id = "vw">この素朴な疑問から</p>
-            <p class="statement2" id = "vw">私たち農楽塾は発足しました。</p>
-            <p class="statement2" id = "vw">そうして誕生した大隈庭園にある早稲田の</p>
-            <p class="statement2" id = "vw">「わせでん」</p>
-            <p class="statement2" id = "vw">を中心に幅広く活動してきました。</p>
-            <p class="statement2" id = "vw">発足から20年たった農楽塾は</p>
-            <p class="statement2" id = "vw">わせでんでの稲作に加え、</p>
-            <p class="statement2" id = "vw">様々な活動を行ってきました。</p>
-        </div>
-        <div class ="big_eclipse">
-            <p class="statement2" id = "vw">早稲田キャンパス南門で行っている</p>
-            <p class="statement2" id = "vw">バケツ稲の栽培は一般認知度も高く、</p>
-            <p class="statement2" id = "vw">南門のいち風景として馴染んできています。 </p>
-            <p class="statement2" id = "vw">内藤とうがらしプロジェクトでは、</p>
-            <p class="statement2" id = "vw">東京都や複数の学校とチームを作り、 </p>
-            <p class="statement2" id = "vw">絶滅しかけていた江戸野菜の復興に </p>
-            <p class="statement2" id = "vw">力を入れてきました。</p>
-            <p class="statement2" id = "vw">昨年度からは留学生の受け入れを開始し、</p>
-            <p class="statement2" id = "vw">年齢や言語、背景や職業も違う多様な人と</p>
-            <p class="statement2" id = "vw">農業を通じて交流することができます。</p>
-        </div>
-        <div class ="medium_eclipse">
-            <div class = "key_phrase">
-                <p class="statement3" id = "vw">「農を楽しみ、</p>
-                <p class="statement4" id = "vw">農を考える」</p>
-            </div>
-            <p class="statement2" id = "vw">のモットーをもとに、活動を続けています。</p>
-        </div>
+        <p class="statement2" id="vw">
+          のモットーをもとに、活動を続けています。
+        </p>
+      </div>
     </div>
     <!-- "透明"ここまで -->
     <!-- 活動内容ここから -->
@@ -61,43 +68,49 @@ import Footer from '../components/Footer.astro';
           <h1>活動内容</h1>
           <div class="item-wrapper">
             <div class="content-item1">
-              <img src="img/content_item1.webp" alt="" />
+              <img src="/official/img/content_item1.webp" alt="" />
               <p>
                 平日は晴れた日のお昼、２限と３限の間にシフト制で集まり、大隈庭園内の田んぼ「わせでん」と菜園の管理を行っています。水やりや成長記録が終わった後は、
                 3限が空いているメンバーでご飯に行くこともあります。
               </p>
             </div>
             <div class="content-item2">
-              <img src="img/gallery6.webp" alt="" />
+              <img src="/official/img/gallery6.webp" alt="" />
               <p>
                 土日や長期休み期間には農家さんに訪問して農業体験を行っています。訪問する場所は神奈川や茨城、埼玉など関東近郊で、作業の後には採れた作物を使ったおいしいご飯を頂くこともあります。
               </p>
             </div>
             <div class="content-item3">
-              <img src="img/step.webp" alt="" />
+              <img src="/official/img/step.webp" alt="" />
               <p>
                 地域にまつわるボランティア活動として援農ボランティアだけでなく、子供への自然教育や、里山の景観保全、新宿名産の野菜のPR活動など多様な活動を行っています。
               </p>
             </div>
           </div>
-          <a class="content-jumpbtn" href="ichinen.html">農楽塾の一年</a>
+          <a class="content-jumpbtn" href="/official/year">農楽塾の一年</a>
         </div>
       </div>
     </div>
     <!-- 活動内容ここまで -->
     <!-- 入会方法ここから -->
     <div class="admission" id="admission">
-        <h2>入会方法</h2>
-        <ul>
-           <li><span>1</span>各種SNSで連絡(Twitter・Instagram・公式LINE)</li>
-           <li><span>2</span>活動見学・体験or説明会に参加</li>
-           <li><span>3</span>入会</li>
-        </ul>
-        <div class="imgimg">
-          <a href="https://www.instagram.com/nogakujuku/" target="_blank"><img src="img/Instagram_Glyph_Black 2.webp" alt=""></a>
-          <a href="https://line.me/R/ti/p/@670jtxer" target="_blank"><img src="img/LINE_Brand_icon.webp" alt=""></a>
-          <a href="https://twitter.com/nogakujuku" target="_blank"><img src="img/logo-black 2.webp" alt="" width="72px"></a>
-        </div>
+      <h2>入会方法</h2>
+      <ul>
+        <li><span>1</span>各種SNSで連絡(Twitter・Instagram・公式LINE)</li>
+        <li><span>2</span>活動見学・体験or説明会に参加</li>
+        <li><span>3</span>入会</li>
+      </ul>
+      <div class="imgimg">
+        <a href="https://www.instagram.com/nogakujuku/" target="_blank"
+          ><img src="/official/img/Instagram_Glyph_Black 2.webp" alt="" /></a
+        >
+        <a href="https://line.me/R/ti/p/@670jtxer" target="_blank"
+          ><img src="/official/img/LINE_Brand_icon.webp" alt="" /></a
+        >
+        <a href="https://twitter.com/nogakujuku" target="_blank"
+          ><img src="/official/img/logo-black 2.webp" alt="" width="72px" /></a
+        >
+      </div>
     </div>
     <!-- 入会方法ここまで -->
     <!-- ギャラリーここから -->
@@ -107,31 +120,28 @@ import Footer from '../components/Footer.astro';
         <div class="swiper">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <img src="img/gallery1.webp" alt="" />
+              <img src="/official/img/gallery1.webp" alt="" />
             </div>
             <div class="swiper-slide">
-              <img src="img/gallery2.webp" alt="" />
+              <img src="/official/img/gallery2.webp" alt="" />
             </div>
             <div class="swiper-slide">
-              <img src="img/gallery3.webp" alt="" />
+              <img src="/official/img/gallery3.webp" alt="" />
             </div>
             <div class="swiper-slide">
-              <img src="img/gallery4.webp" alt="" />
+              <img src="/official/img/gallery4.webp" alt="" />
             </div>
             <div class="swiper-slide">
-              <img
-                src="img/gallery5.webp"
-                alt=""
-              />
+              <img src="/official/img/gallery5.webp" alt="" />
             </div>
             <div class="swiper-slide">
-              <img src="img/gallery6.webp" alt="" />
+              <img src="/official/img/gallery6.webp" alt="" />
             </div>
           </div>
         </div>
         <div class="swiper-pagination"></div>
       </div>
-      <a class="gallery-jumpbtn" href="gallery">一覧はこちら</a>
+      <a class="gallery-jumpbtn" href="/official/gallery">一覧はこちら</a>
     </div>
     <!-- ギャラリーここまで -->
     <!-- 活動場所ここから -->
@@ -139,13 +149,25 @@ import Footer from '../components/Footer.astro';
       <div class="active-grandchild">
         <div class="text">
           <h2>活動場所</h2>
-          <p class="underline"><nobr class="thick">「早稲“田”なのに<wbr>なぜ“田”んぼがないのか？」</nobr></p>
-          <p><nobr>この素朴な疑問から、<wbr>2004年早稲田・大隈庭園に復活した<wbr><span class="thick">「わせでん」</span>。</nobr></p>
-          <p>農楽塾はその<span class="thick">「わせでん」</span>を中心に、幅広く活動しています。</p>
+          <p class="underline">
+            <nobr class="thick"
+              >「早稲“田”なのに<wbr />なぜ“田”んぼがないのか？」</nobr
+            >
+          </p>
+          <p>
+            <nobr
+              >この素朴な疑問から、<wbr />2004年早稲田・大隈庭園に復活した<wbr
+              /><span class="thick">「わせでん」</span>。</nobr
+            >
+          </p>
+          <p>
+            農楽塾はその<span class="thick">「わせでん」</span
+            >を中心に、幅広く活動しています。
+          </p>
         </div>
-        <img src="img/map.webp" alt="">  
+        <img src="/official/img/map.webp" alt="" />
       </div>
-    </div>  
+    </div>
     <!-- 活動場所ここまで -->
   </main>
   <!-- フッターここから -->
