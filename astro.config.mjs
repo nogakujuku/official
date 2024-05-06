@@ -8,4 +8,5 @@ export default defineConfig({
     open: true,
   },
   site: "https://nogakujuku.github.io",
+  base: "/official",
 });
