@@ -659,7 +659,8 @@ header {
   }
 }
 
-.fade {
+/* Note: GitHub Pageにデプロイしてスマホで見るとなぜか表示されないので一旦コメントアウト */
+/* .fade {
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 1.5s, transform 1s;
@@ -678,7 +679,7 @@ header {
 .fade-left.active {
   opacity: 1;
   transform: translateX(0);
-}
+} */
 
 /* @keyframes fadein-left {
   
