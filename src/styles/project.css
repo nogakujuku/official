@@ -29,6 +29,7 @@ main {
 
 .mainimg {
   width: 70%;
+  border-radius: 20px;
 }
 
 .projects {
@@ -49,6 +50,7 @@ main {
 
 .projects img {
   object-fit: cover;
+  width: 100%;
 }
 
 .project1,
@@ -60,6 +62,7 @@ main {
 .project7,
 .project8 {
   height: 418px;
+  width: 350px;
   margin: 0 auto;
 }
 
