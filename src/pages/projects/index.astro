@@ -3,6 +3,10 @@ import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import "/src/styles/project.css";
+
+//microCMS呼び出し
+import { getBlogs } from "../../library/microcms";
+const response = await getBlogs({ fields: ["id", "title", "img", "content"] });
 ---
 
 <Layout>
@@ -14,79 +18,94 @@ import "/src/styles/project.css";
       <h1>プロジェクト紹介</h1>
       <img class="mainimg" src="/official/img/activity3.webp" alt="" />
     </div>
-    <div class="projects">
-      <div class="project1">
-        <img src="/official/projectimg/project1.webp" alt="" />
-        <div class="text1">
-          <h3>早稲田で田んぼプロジェクト</h3>
-          <p class="content">早稲田の地に田んぼの復活！</p>
-          <hr />
-          <a href="/official/media" class="readmore">READ MORE</a>
+    <ul>
+      {
+        response.contents.map((content: any) => (
+          <li>
+            <img src="" alt="" />
+            <div class="text1">
+              <h3>{content.title}</h3>
+              <p set:html="">{content.content}</p>
+              <hr />
+              <a href={"/official/projects/" + content.id}>{content.title}</a>
+            </div>
+          </li>
+        ))
+      }
+      <div class="projects">
+        <div class="project1">
+          <img src="/official/projectimg/project1.webp" alt="" />
+          <div class="text1">
+            <h3>早稲田で田んぼプロジェクト</h3>
+            <p class="content">早稲田の地に田んぼの復活！</p>
+            <hr />
+            <a href="/official/media" class="readmore">READ MORE</a>
+          </div>
+        </div>
+        <div class="project2">
+          <img src="/official/projectimg/project2.webp" alt="" />
+          <div class="text2">
+            <h3>ステップ学級との食育プロジェクト</h3>
+            <p class="content">早稲「田」で「食」と「農」を考えよう</p>
+            <hr />
+            <a href="/official/media" class="readmore">READ MORE</a>
+          </div>
+        </div>
+        <div class="project3">
+          <img src="/official/img/activity4.webp" alt="" />
+          <div class="text3">
+            <h3>子供課企画</h3>
+            <p class="content">田んぼってなあに？</p>
+            <hr />
+            <a href="/official/media" class="readmore">READ MORE</a>
+          </div>
+        </div>
+        <div class="project4">
+          <img src="/official/projectimg/kakashi.webp" alt="" />
+          <div class="text4">
+            <h3>バケツ稲プロジェクト</h3>
+            <p class="content">
+              早稲田で農業をやっていることをより多くの人に知ってもらう！
+            </p>
+            <hr />
+            <a href="/official/media" class="readmore">READ MORE</a>
+          </div>
+        </div>
+        <div class="project5">
+          <img src="/official/projectimg/project5.webp" alt="" />
+          <div class="text5">
+            <h3>農家訪問プロジェクト</h3>
+            <p class="content">
+              茨城県かすみがうら市の西崎ファームで農業体験を行っています。
+            </p>
+            <hr />
+            <a href="/official/media" class="readmore">READ MORE</a>
+          </div>
+        </div>
+        <div class="project6">
+          <img src="/official/projectimg/project6.webp" alt="" />
+          <div class="text6">
+            <h3>菜園プロジェクト</h3>
+            <p class="content">植物見本市</p>
+            <hr />
+            <a href="/official/media" class="readmore">READ MORE</a>
+          </div>
+        </div>
+        <div class="project8">
+          <img src="/official/projectimg/satoyama.webp" alt="" />
+          <div class="text8">
+            <h3>里山でボランティア活動</h3>
+            <p class="content">
+              自然と人とのふれあいの中で、里山の魅力を感じよう
+            </p>
+            <hr />
+            <a href="/official/media" class="readmore">READ MORE</a>
+          </div>
         </div>
       </div>
-      <div class="project2">
-        <img src="/official/projectimg/project2.webp" alt="" />
-        <div class="text2">
-          <h3>ステップ学級との食育プロジェクト</h3>
-          <p class="content">早稲「田」で「食」と「農」を考えよう</p>
-          <hr />
-          <a href="/official/media" class="readmore">READ MORE</a>
-        </div>
-      </div>
-      <div class="project3">
-        <img src="/official/img/activity4.webp" alt="" />
-        <div class="text3">
-          <h3>子供課企画</h3>
-          <p class="content">田んぼってなあに？</p>
-          <hr />
-          <a href="/official/media" class="readmore">READ MORE</a>
-        </div>
-      </div>
-      <div class="project4">
-        <img src="/official/projectimg/kakashi.webp" alt="" />
-        <div class="text4">
-          <h3>バケツ稲プロジェクト</h3>
-          <p class="content">
-            早稲田で農業をやっていることをより多くの人に知ってもらう！
-          </p>
-          <hr />
-          <a href="/official/media" class="readmore">READ MORE</a>
-        </div>
-      </div>
-      <div class="project5">
-        <img src="/official/projectimg/project5.webp" alt="" />
-        <div class="text5">
-          <h3>農家訪問プロジェクト</h3>
-          <p class="content">
-            茨城県かすみがうら市の西崎ファームで農業体験を行っています。
-          </p>
-          <hr />
-          <a href="/official/media" class="readmore">READ MORE</a>
-        </div>
-      </div>
-      <div class="project6">
-        <img src="/official/projectimg/project6.webp" alt="" />
-        <div class="text6">
-          <h3>菜園プロジェクト</h3>
-          <p class="content">植物見本市</p>
-          <hr />
-          <a href="/official/media" class="readmore">READ MORE</a>
-        </div>
-      </div>
-      <div class="project8">
-        <img src="/official/projectimg/satoyama.webp" alt="" />
-        <div class="text8">
-          <h3>里山でボランティア活動</h3>
-          <p class="content">
-            自然と人とのふれあいの中で、里山の魅力を感じよう
-          </p>
-          <hr />
-          <a href="/official/media" class="readmore">READ MORE</a>
-        </div>
-      </div>
-    </div>
+    </ul>
+    <!-- フッターここから -->
+    <Footer />
+    <!-- フッターここまで -->
   </main>
-  <!-- フッターここから -->
-  <Footer />
-  <!-- フッターここまで -->
 </Layout>
