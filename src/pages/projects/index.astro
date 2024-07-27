@@ -6,7 +6,10 @@ import "/src/styles/project.css";
 
 //microCMS呼び出し
 import { getBlogs } from "../../library/microcms";
-const response = await getBlogs({ fields: ["id", "title", "img", "content"] });
+import { imageConfig } from "astro:assets";
+const response = await getBlogs({
+  fields: ["id", "title", "img", "url", "content"],
+});
 ---
 
 <Layout>
@@ -18,18 +21,20 @@ const response = await getBlogs({ fields: ["id", "title", "img", "content"] });
       <h1>プロジェクト紹介</h1>
       <img class="mainimg" src="/official/img/activity3.webp" alt="" />
     </div>
-    <ul>
+    <div class="projects">
       {
         response.contents.map((content: any) => (
-          <li>
-            <img src="" alt="" />
+          <div class="project1">
+            <img src="/official/projectimg/project1.webp" alt="" />
             <div class="text1">
               <h3>{content.title}</h3>
               <p set:html="">{content.content}</p>
               <hr />
-              <a href={"/official/projects/" + content.id}>{content.title}</a>
+              <a href={"/official/projects/" + content.id} class="readmore">
+                READ MORE
+              </a>
             </div>
-          </li>
+          </div>
         ))
       }
       <div class="projects">
@@ -103,7 +108,7 @@ const response = await getBlogs({ fields: ["id", "title", "img", "content"] });
           </div>
         </div>
       </div>
-    </ul>
+    </div>
     <!-- フッターここから -->
     <Footer />
     <!-- フッターここまで -->
