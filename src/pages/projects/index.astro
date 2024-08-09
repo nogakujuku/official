@@ -4,15 +4,20 @@ import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import "/src/styles/project.css";
 
+const title = "プロジェクト紹介 | 学生NPO 農楽塾公式HP | 早稲田 農業サークル";
+const description = "";
+const og_image = "";
+
 //microCMS呼び出し
 import { getBlogs } from "../../library/microcms";
 import { imageConfig } from "astro:assets";
 const response = await getBlogs({
   fields: ["id", "title", "img", "url", "content"],
 });
+const defaultImg = "https://www.winc.ne.jp/images/WAXA_PC.webp";
 ---
 
-<Layout>
+<Layout title={title} description={description} og_image={og_image}>
   <!-- ヘッダーここから -->
   <Header />
   <!-- ヘッダーここまで -->
@@ -25,7 +30,7 @@ const response = await getBlogs({
       {
         response.contents.map((content: any) => (
           <div class="project1">
-            <img src="/official/projectimg/project1.webp" alt="" />
+            <img src={content?.img?.url ?? defaultImg} alt="" />
             <div class="text1">
               <h3>{content.title}</h3>
               <p set:html="">{content.content}</p>
