@@ -3,9 +3,14 @@ import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import "/src/styles/ichinen.css";
+
+const title = "農楽塾の一年 | 学生NPO 農楽塾公式HP | 早稲田 農業サークル";
+const description =
+  "農楽塾の一年の流れをご紹介します。私たちは都心で「農」を実践しながら、普段、農業を経験できない人に、その機会を提供します。土に触れ、汗を流す楽しさを知ってほしい。そして、あなたのすぐそばにある「農」について、すこしでも考えてもらいたい。それが、私たち「農楽塾」の願いです。";
+const og_image = "https://nogakujuku.github.io/official/img/noukahoumon.webp";
 ---
 
-<Layout>
+<Layout title={title} description={description} og_image={og_image}>
   <!-- ヘッダーここから -->
   <Header />
   <!-- ヘッダーここまで -->

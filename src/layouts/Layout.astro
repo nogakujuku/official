@@ -1,11 +1,19 @@
 ---
 import "/src/styles/style.css";
-const {
-  title = "学生NPO 農楽塾公式HP | 早稲田 農業サークル",
-  description = "「早稲'田'なのに、なぜ'田'んぼがないのか？」この素朴な疑問から私たち農楽塾は発足しました。そうして誕生した大隈庭園にある早稲田の「わせでん」を中心に幅広く活動してきました。発足から20年たった農楽塾はわせでんでの稲作に加え、様々な活動を行ってきました。",
-  og_image = "https://nogakujuku.github.io/official/img/nogakujuku_header_logo.webp",
-} = Astro.props;
 // タイトル等をPropsとして受け取る。指定がない場合のデフォルト値を設定しておく。
+let { title, description, og_image } = Astro.props;
+
+if (!title) {
+  title = "学生NPO 農楽塾公式HP | 早稲田 農業サークル";
+}
+if (!description) {
+  description =
+    "「早稲'田'なのに、なぜ'田'んぼがないのか？」この素朴な疑問から私たち農楽塾は発足しました。そうして誕生した大隈庭園にある早稲田の「わせでん」を中心に幅広く活動してきました。発足から20年たった農楽塾はわせでんでの稲作に加え、様々な活動を行ってきました。";
+}
+if (!og_image) {
+  og_image =
+    "https://nogakujuku.github.io/official/img/nogakujuku_header_logo.webp";
+}
 ---
 
 <!doctype html>
