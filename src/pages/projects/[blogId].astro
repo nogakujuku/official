@@ -3,7 +3,6 @@ import Layout from "../../layouts/Layout.astro";
 import { getBlogs, getBlogDetail } from "../../library/microcms";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
-import { Image } from "astro:assets";
 import "/src/styles/ichinen.css";
 import "/src/styles/project_article.css";
 import defaultMvImage from "/src/assets/project_article_img/article_main.webp";
@@ -43,7 +42,7 @@ const og_image = "https://nogakujuku.github.io/official/img/noukahoumon.webp";
           <div class="concept-text-title">
             <h2>コンセプト</h2>
           </div>
-          <p>{blog.concept}</p>
+          <p>{blog?.concept}</p>
         </div>
       </div>
     </div>
@@ -51,7 +50,7 @@ const og_image = "https://nogakujuku.github.io/official/img/noukahoumon.webp";
       <div class="content-title">
         <h3>概要</h3>
       </div>
-      <div class="content-text post" set:html={blog.content} />
+      <div class="content-text post" set:html={blog?.content} />
     </div>
     <div class="backtolist">
       <a class="backto-link" href="/official/projects/">
