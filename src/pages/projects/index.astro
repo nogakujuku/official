@@ -10,7 +10,6 @@ const og_image = "";
 
 //microCMS呼び出し
 import { getBlogs } from "../../library/microcms";
-import { imageConfig } from "astro:assets";
 const response = await getBlogs({
   fields: ["id", "title", "img", "url", "concept"],
 });
