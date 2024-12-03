@@ -5,7 +5,7 @@ import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import "/src/styles/ichinen.css";
 import "/src/styles/project_article.css";
-import defaultMvImage from "/src/assets/project_article_img/article_main.webp";
+const defaultMvImage = "/official/project_article_img/article_main.webp";
 
 // 詳細記事ページの全パスを取得
 export async function getStaticPaths() {
@@ -26,6 +26,7 @@ const title =
 const description =
   "農楽塾の一年の流れをご紹介します。私たちは都心で「農」を実践しながら、普段、農業を経験できない人に、その機会を提供します。土に触れ、汗を流す楽しさを知ってほしい。そして、あなたのすぐそばにある「農」について、すこしでも考えてもらいたい。それが、私たち「農楽塾」の願いです。";
 const og_image = "https://nogakujuku.github.io/official/img/noukahoumon.webp";
+console.log(blog.concept);
 ---
 
 <Layout title={title} description={description} og_image={og_image}>
@@ -34,7 +35,11 @@ const og_image = "https://nogakujuku.github.io/official/img/noukahoumon.webp";
     <!-- <p class="publishedAt">公開日時：{blog.publishedAt}</p> -->
     <div class="main-title">
       <div class="mainimg">
-        <img src={blog?.img?.url ?? defaultMvImage} alt="" />
+        {
+          blog?.img?.url ? (
+            <img src={blog?.img?.url ?? defaultMvImage} alt="" />
+          ) : null
+        }
         <h1 class="title">{blog.title}</h1>
       </div>
       <div class="concept fade-right">
@@ -42,7 +47,11 @@ const og_image = "https://nogakujuku.github.io/official/img/noukahoumon.webp";
           <div class="concept-text-title">
             <h2>コンセプト</h2>
           </div>
-          <p>{blog?.concept}</p>
+          {
+            blog.concept ? (
+              <p>{blog?.concept ?? "No concept available"}</p>
+            ) : null
+          }
         </div>
       </div>
     </div>
