@@ -51,6 +51,8 @@ main {
 .projects img {
   object-fit: cover;
   width: 100%;
+  aspect-ratio: 14/10;
+  display: block;
 }
 
 .project1,
@@ -61,7 +63,6 @@ main {
 .project6,
 .project7,
 .project8 {
-  height: 418px;
   width: 350px;
   margin: 0 auto;
 }
