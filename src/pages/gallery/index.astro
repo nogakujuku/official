@@ -10,9 +10,13 @@ import { getGallery } from "../../library/microcms";
 const response = await getGallery({
   fields: ["id", "img", "description"],
 });
+
+const title = "ギャラリー | 早稲田 農業サークル | 学生NPO 農楽塾公式HP";
+const description =
+  "農楽塾の活動の様子を映した写真はこちらからご覧いただけます。";
 ---
 
-<Layout>
+<Layout title={title} description={description}>
   <!-- ヘッダーここから -->
   <Header />
   <!-- ヘッダーここまで -->

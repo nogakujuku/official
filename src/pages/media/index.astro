@@ -32,9 +32,13 @@ for (let year = 2100; year >= 2005; year--) {
     (content: any) => new Date(content.publishedDate).getFullYear() === year
   );
 }
+
+const title = "メディア情報 | 早稲田 農業サークル | 学生NPO 農楽塾公式HP";
+const description =
+  "農楽塾の活動を紹介してくれたメディア情報の一覧です。農楽塾の活動は雑誌や書籍、テレビなどで取り上げられてきました。";
 ---
 
-<Layout>
+<Layout title={title} description={description}>
   <!-- ヘッダーここから -->
   <Header />
   <!-- ヘッダーここまで -->
