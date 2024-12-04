@@ -10,7 +10,6 @@ import { getGallery } from "../../library/microcms";
 const response = await getGallery({
   fields: ["id", "img", "description"],
 });
-console.log(response.contents[0].img);
 ---
 
 <Layout>

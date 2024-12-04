@@ -49,12 +49,32 @@ export type Media = {
   revisedAt: string;
   title: string;
   content: string;
+  publishedDate: string;
+  tags: string;
+  link: string;
 };
 export type MediaResponse = {
   totalCount: number;
   offset: number;
   limit: number;
   contents: Media[];
+};
+
+export type Gallery = {
+  id: string;
+  createdAt: string;
+  updatedAt: string;
+  publishedAt: string;
+  revisedAt: string;
+  title: string;
+  content: string;
+};
+
+export type GalleryResponse = {
+  totalCount: number;
+  offset: number;
+  limit: number;
+  contents: Gallery[];
 };
 
 //APIの呼び出し

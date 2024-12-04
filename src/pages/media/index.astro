@@ -4,7 +4,6 @@ import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import MV from "@/components/MV.astro";
 import MediaList from "@/components/MediaList.astro";
-import dayjs from "dayjs";
 import "@/styles/media.scss";
 
 //microCMS呼び出し
@@ -12,11 +11,25 @@ import { getMedias } from "../../library/microcms";
 const response = await getMedias({
   fields: ["id", "title", "publishedDate", "tags", "link"],
 });
-// 2005年から2015年までのデータを準備
-const dataByYear = {};
+
+interface ContentType {
+  id: string;
+  createdAt: string;
+  updatedAt: string;
+  publishedAt: string;
+  revisedAt: string;
+  title: string;
+  content: string;
+  publishedDate: string;
+  tags: string;
+  link: string;
+}
+
+// 年ごとのデータの型定義
+const dataByYear: Record<number, ContentType[]> = {};
 for (let year = 2100; year >= 2005; year--) {
   dataByYear[year] = response.contents.filter(
-    (content) => new Date(content.publishedDate).getFullYear() === year
+    (content: any) => new Date(content.publishedDate).getFullYear() === year
   );
 }
 ---
@@ -31,8 +44,10 @@ for (let year = 2100; year >= 2005; year--) {
       <div class="container">
         <div>
           {
-            Object.keys(dataByYear).map(
-              (year) =>
+            Object.keys(dataByYear).map((yearString) => {
+              const year = Number(yearString); // year を数値型に変換
+
+              return (
                 dataByYear[year].length > 0 && (
                   <div class="p-chronology__year">
                     <h2>{year}年</h2>
@@ -49,7 +64,8 @@ for (let year = 2100; year >= 2005; year--) {
                     </ul>
                   </div>
                 )
-            )
+              );
+            })
           }
         </div>
         <!-- 2015年のデータを表示 -->
