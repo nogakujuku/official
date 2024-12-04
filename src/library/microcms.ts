@@ -40,3 +40,49 @@ export const getBlogDetail = async (
     queries,
   });
 };
+
+export type Media = {
+  id: string;
+  createdAt: string;
+  updatedAt: string;
+  publishedAt: string;
+  revisedAt: string;
+  title: string;
+  content: string;
+  publishedDate: string;
+  tags: string;
+  link: string;
+};
+export type MediaResponse = {
+  totalCount: number;
+  offset: number;
+  limit: number;
+  contents: Media[];
+};
+
+export type Gallery = {
+  id: string;
+  createdAt: string;
+  updatedAt: string;
+  publishedAt: string;
+  revisedAt: string;
+  title: string;
+  content: string;
+};
+
+export type GalleryResponse = {
+  totalCount: number;
+  offset: number;
+  limit: number;
+  contents: Gallery[];
+};
+
+//APIの呼び出し
+export const getMedias = async (queries?: MicroCMSQueries) => {
+  return await client.get<MediaResponse>({ endpoint: "media", queries });
+};
+
+//APIの呼び出し
+export const getGallery = async (queries?: MicroCMSQueries) => {
+  return await client.get<GalleryResponse>({ endpoint: "gallery", queries });
+};

@@ -1,0 +1,22 @@
+---
+const { id, title, publishedDate, tags, link } = Astro.props;
+---
+
+<li>
+  <p>
+    {new Date(publishedDate).toLocaleDateString("ja-JP")}
+  </p>
+  <p class="p-chronology__year__tags">
+    {" "}
+    {tags.join("、・ ")}
+  </p>
+  {
+    link ? (
+      <a href={link} target="_blank" rel="noopener">
+        {title}
+      </a>
+    ) : (
+      <p>{title}</p>
+    )
+  }
+</li>
