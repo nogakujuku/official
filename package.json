@@ -14,6 +14,7 @@
     "@astrojs/tailwind": "^5.1.3",
     "@fontsource/koulen": "^5.1.0",
     "astro": "^4.4.15",
+    "astro-google-analytics": "^1.0.3",
     "dayjs": "^1.11.13",
     "flowbite": "^2.5.2",
     "microcms-js-sdk": "^3.1.2",
