@@ -11,7 +11,9 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.5.6",
+    "@fontsource/koulen": "^5.1.0",
     "astro": "^4.4.15",
+    "dayjs": "^1.11.13",
     "microcms-js-sdk": "^3.1.2",
     "sass": "^1.81.1",
     "sharp": "^0.33.5",

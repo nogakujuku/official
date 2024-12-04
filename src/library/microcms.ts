@@ -40,3 +40,34 @@ export const getBlogDetail = async (
     queries,
   });
 };
+
+export type Media = {
+  id: string;
+  createdAt: string;
+  updatedAt: string;
+  publishedAt: string;
+  revisedAt: string;
+  title: string;
+  content: string;
+};
+export type MediaResponse = {
+  totalCount: number;
+  offset: number;
+  limit: number;
+  contents: Media[];
+};
+
+//APIの呼び出し
+export const getMedias = async (queries?: MicroCMSQueries) => {
+  return await client.get<MediaResponse>({ endpoint: "media", queries });
+};
+export const getMediaDetail = async (
+  contentId: string,
+  queries?: MicroCMSQueries
+) => {
+  return await client.getListDetail<Media>({
+    endpoint: "media",
+    contentId,
+    queries,
+  });
+};

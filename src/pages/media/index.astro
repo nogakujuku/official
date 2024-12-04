@@ -2,15 +2,106 @@
 import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
-import Coming_soon from "../../components/Coming_soon.astro";
+import MV from "@/components/MV.astro";
+import MediaList from "@/components/MediaList.astro";
+import dayjs from "dayjs";
+import "@/styles/media.scss";
+
+//microCMS呼び出し
+import { getMedias } from "../../library/microcms";
+const response = await getMedias({
+  fields: ["id", "title", "publishedDate", "tags", "link"],
+});
+// 2005年から2015年までのデータを準備
+const dataByYear = {};
+for (let year = 2100; year >= 2005; year--) {
+  dataByYear[year] = response.contents.filter(
+    (content) => new Date(content.publishedDate).getFullYear() === year
+  );
+}
+console.log(dataByYear);
 ---
 
 <Layout>
   <!-- ヘッダーここから -->
   <Header />
   <!-- ヘッダーここまで -->
-  <main></main>
+  <main>
+    <MV title="メディア情報" img="/official/img/media_top.webp" />
+    <section id="chronology" class="p-chronology">
+      <div class="container">
+        <div>
+          {
+            Object.keys(dataByYear).map(
+              (year) =>
+                dataByYear[year].length > 0 && (
+                  <div class="p-chronology__year">
+                    <h2>{year}年</h2>
+                    <ul>
+                      {dataByYear[year].map((content) => (
+                        <MediaList
+                          id={content.id}
+                          title={content.title}
+                          publishedDate={content.publishedDate}
+                          tags={content.tags}
+                          link={content.link}
+                        />
+                      ))}
+                    </ul>
+                  </div>
+                )
+            )
+          }
+        </div>
+        <!-- 2015年のデータを表示 -->
+        <!-- {
+          data2015.length > 0 && (
+            <div class="p-chronology__year">
+              <h2>2015年</h2>
+              <ul>
+                {data2015.map((content) => (
+                  <MediaList
+                    id={content.id}
+                    title={content.title}
+                    publishedDate={content.publishedDate}
+                    tags={content.tags}
+                    link={content.link}
+                  />
+                ))}
+              </ul>
+            </div>
+          )
+        } -->
+
+        <!-- 2014年のデータを表示 -->
+        <!-- {
+          data2014.length > 0 && (
+            <div class="p-chronology__year">
+              <h2>2014年</h2>
+              <ul>
+                {data2014.map((content) => (
+                  <MediaList
+                    id={content.id}
+                    title={content.title}
+                    publishedDate={content.publishedDate}
+                    tags={content.tags}
+                    link={content.link}
+                  />
+                ))}
+              </ul>
+            </div>
+          )
+        } -->
+      </div>
+    </section>
+  </main>
   <!-- フッターここから -->
   <Footer />
   <!-- フッターここまで -->
 </Layout>
+
+<style>
+  body {
+    background-color: #fbf0de;
+  }
+</style>

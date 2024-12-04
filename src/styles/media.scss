@@ -1,0 +1,56 @@
+@charset "UTF-8";
+@use "./variables" as *;
+
+.p-chronology {
+  &__year {
+    h2 {
+      text-align: left;
+      display: block;
+      color: #553116;
+      font-family: "Koulen", system-ui;
+      font-weight: 400;
+      font-size: 50px;
+      letter-spacing: 10px;
+    }
+    ul {
+      li {
+        display: flex;
+        align-items: center;
+        p,
+        a {
+          font-size: 24px;
+          color: #553116;
+        }
+        p {
+          &:first-of-type {
+            margin-right: 50px;
+          }
+        }
+        .p-chronology__year__tags {
+          margin-right: 50px;
+        }
+        a {
+          text-decoration: underline;
+          font-size: 24px;
+          display: flex;
+          align-items: center;
+          transition: 0.3s all;
+          &:hover {
+            opacity: 0.6;
+            transition: 0.3s all;
+          }
+          &::after {
+            content: "";
+            display: block;
+            width: 40px;
+            height: 40px;
+            margin-left: 50px;
+            aspect-ratio: 1/1;
+            background-image: url(/official/img/arrow-right.svg);
+            background-repeat: no-repeat;
+          }
+        }
+      }
+    }
+  }
+}
