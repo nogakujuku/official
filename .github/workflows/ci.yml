@@ -19,6 +19,11 @@ jobs:
         uses: withastro/action@v1
         with:
           node-version: 20
+      - name: Build the project
+        env:
+          SERVICE_DOMAIN: ${{ secrets.MICROCMS_SERVICE_DOMAIN }}
+          API_KEY: ${{ secrets.MICROCMS_API_KEY }}
+        run: npm run build
 
   deploy:
     needs: build
