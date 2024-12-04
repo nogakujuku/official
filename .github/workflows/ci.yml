@@ -19,15 +19,9 @@ jobs:
         uses: withastro/action@v1
         with:
           node-version: 20
-      - name: Install, build, and upload
-        uses: withastro/action@v1
-        with:
-          node-version: 20
         env:
           MICROCMS_SERVICE_DOMAIN: ${{ secrets.MICROCMS_SERVICE_DOMAIN }}
           MICROCMS_API_KEY: ${{ secrets.MICROCMS_API_KEY }}
-      - name: Build the project
-        run: npm run build
 
   deploy:
     needs: build
