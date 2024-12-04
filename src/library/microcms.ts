@@ -61,13 +61,8 @@ export type MediaResponse = {
 export const getMedias = async (queries?: MicroCMSQueries) => {
   return await client.get<MediaResponse>({ endpoint: "media", queries });
 };
-export const getMediaDetail = async (
-  contentId: string,
-  queries?: MicroCMSQueries
-) => {
-  return await client.getListDetail<Media>({
-    endpoint: "media",
-    contentId,
-    queries,
-  });
+
+//APIの呼び出し
+export const getGallery = async (queries?: MicroCMSQueries) => {
+  return await client.get<GalleryResponse>({ endpoint: "gallery", queries });
 };
