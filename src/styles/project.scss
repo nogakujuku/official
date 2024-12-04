@@ -2,36 +2,6 @@ main {
   background: #fbf0de;
 }
 
-.project-title {
-  height: auto;
-  position: relative;
-  text-align: right;
-}
-
-.project-title h1 {
-  position: absolute;
-  display: block;
-  width: 30%;
-  height: 76px;
-  border-radius: 10px;
-  border: 1px solid #553116;
-  background: rgba(251, 240, 222, 0.8);
-  color: #553116;
-  font-family: Inter;
-  font-size: 27px;
-  font-weight: 600;
-  letter-spacing: 8.1px;
-  text-align: center;
-  line-height: 76px;
-  top: 30%;
-  left: 8%;
-}
-
-.mainimg {
-  width: 70%;
-  border-radius: 20px;
-}
-
 .projects {
   height: auto;
   width: 90%;
@@ -130,10 +100,6 @@ main {
   .projects {
     grid-template-columns: repeat(2, minmax(200px, 1fr));
   }
-
-  .project-title h1 {
-    font-size: 20px;
-  }
 }
 
 @media screen and (max-width: 1000px) {
@@ -154,12 +120,6 @@ main {
 
   .projects hr {
     top: 80%;
-  }
-
-  .project-title h1 {
-    font-size: 15px;
-    height: 50px;
-    line-height: 50px;
   }
 
   .project1,
@@ -222,21 +182,6 @@ main {
   .readmore {
     top: 85%;
     left: 50%;
-  }
-}
-
-@media screen and (max-width: 700px) {
-  .project-title h1 {
-    font-size: 15px;
-    height: 29px;
-    line-height: 29px;
-    width: 163px;
-    color: #553116;
-    font-family: Inter;
-
-    font-weight: 600;
-
-    letter-spacing: 1.5px;
   }
 }
 

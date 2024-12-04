@@ -3,6 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import "/src/styles/project.scss";
+import MV from "@/components/MV.astro";
 
 const title = "プロジェクト紹介 | 学生NPO 農楽塾公式HP | 早稲田 農業サークル";
 const description = "";
@@ -22,10 +23,7 @@ const defaultImg = "/src/assets/project_article_img/article_main.webp";
   <Header />
   <!-- ヘッダーここまで -->
   <main>
-    <div class="project-title">
-      <h1>プロジェクト紹介</h1>
-      <img class="mainimg" src="/official/img/activity3.webp" alt="" />
-    </div>
+    <MV title="プロジェクト紹介" img="/official/img/activity3.webp" />
     <div class="projects">
       {
         response.contents.map((content: any) => (
