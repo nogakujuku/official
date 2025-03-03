@@ -8,15 +8,15 @@ const { id, title, publishedDate, tags, link } = Astro.props;
   </p>
   <p class="p-chronology__year__tags">
     {" "}
-    {tags.join("、・ ")}
+    {tags.join("・ ")}
   </p>
   {
     link ? (
-      <a href={link} target="_blank" rel="noopener">
+      <a href={link} class="p-chronology__title" target="_blank" rel="noopener">
         {title}
       </a>
     ) : (
-      <p>{title}</p>
+      <p class="p-chronology__title">{title}</p>
     )
   }
 </li>

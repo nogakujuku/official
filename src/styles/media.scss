@@ -24,6 +24,7 @@
         p {
           &:first-of-type {
             margin-right: 50px;
+            font-weight: 700;
           }
         }
         .p-chronology__year__tags {
@@ -51,6 +52,55 @@
           }
         }
       }
+    }
+  }
+  &__title {
+    width: 50%;
+    border-bottom: 1px solid #c9aa94;
+    padding-left: 20px;
+  }
+}
+
+@media (max-width: $breakpointMobile) {
+  .p-chronology {
+    &__year {
+      h2 {
+        font-weight: 400;
+        font-size: 24px;
+        letter-spacing: 10px;
+      }
+      ul {
+        padding: 0;
+        li {
+          p,
+          a {
+            font-size: 14px;
+          }
+          p {
+            &:first-of-type {
+              margin-right: 10px;
+              font-weight: 700;
+            }
+          }
+          .p-chronology__year__tags {
+            margin-right: 10px;
+          }
+          a {
+            font-size: 24px;
+            &::after {
+              width: 40px;
+              height: 40px;
+              margin-left: 10px;
+              aspect-ratio: 1/1;
+            }
+          }
+        }
+      }
+    }
+    &__title {
+      width: 50%;
+      border-bottom: 1px solid #c9aa94;
+      padding-left: 10px;
     }
   }
 }
